@@ -2,7 +2,6 @@ package com.olabi.olabiflix.controller;
 
 import com.olabi.olabiflix.model.entity.Filme;
 import com.olabi.olabiflix.repository.FilmeRepository;
-import org.hibernate.sql.model.PreparableMutationOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
