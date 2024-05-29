@@ -34,6 +34,11 @@ public class FilmeController {
         return repository.save(filmeBody);
     }
 
+    @DeleteMapping("/{id}/delete")
+    public void delete(@PathVariable UUID id){
+        repository.deleteById(id);
+    }
+
 }
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
