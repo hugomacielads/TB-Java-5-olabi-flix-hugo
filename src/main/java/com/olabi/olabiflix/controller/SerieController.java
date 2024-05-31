@@ -10,19 +10,27 @@ import java.util.List;
 @RequestMapping("/series")
 public class SerieController {
 
-        private final SerieRepository repository;
+    private final SerieRepository repository;
 
-        public SerieController(SerieRepository repository) {
-            this.repository = repository;
-        }
+    public SerieController(SerieRepository repository) {
+        this.repository = repository;
+    }
 
-        @GetMapping()
-        public List<Serie> getSeries(){
-            return repository.findAll();
-        }
+    @GetMapping() // GET - Lista de series
+    public List<Serie> getSeries(){
+        return repository.findAll();
+    }
 
-        @PostMapping("/criar")
-        public Serie create(@RequestBody Serie serieBody){
-            return repository.save(serieBody);
-        }
+    @GetMapping("/{id}") // GET - Busca por Id
+
+    @GetMapping("/busca-title") // GET - Busca por título
+
+    @GetMapping("/busca-genero") // GET - Busca por gênero
+
+    @PostMapping("/criar") // POST - Cadastro de Serie
+    public Serie create(@RequestBody Serie serieBody){
+        return repository.save(serieBody);
+    }
+
+    @DeleteMapping("/{id}/delete") // DELETE - Exclusão de Filmes
 }

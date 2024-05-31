@@ -30,6 +30,7 @@ public class FilmeController {
         return repository.findById(id);
     }
 
+    // Query Params
     @GetMapping("/busca-title") // GET - Busca por título
     public ResponseEntity<Filme> findByTitle(@RequestParam(name = "title", defaultValue = "") String title) {
         Optional<Filme> filmeEncontrado = repository.findByTitle(title);
@@ -51,7 +52,7 @@ public class FilmeController {
         return repository.save(filmeBody);
     }
 
-    @DeleteMapping("/{id}/delete")
+    @DeleteMapping("/{id}/delete") // DELETE - Exclusão de Filmes
     @ResponseStatus(HttpStatus.NO_CONTENT)
     /* Utilizamos o void pois não retornaremos nada, apenas apagaremos */
     public void delete(@PathVariable UUID id){
